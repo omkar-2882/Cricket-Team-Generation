@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
-    data = pd.read_csv('.\Final Players data.csv')
+    data = pd.read_csv('Final Players data.csv')
     # Filter players for the specified team IDs
     players_team1 = data[data['Team ID'] == team1_id]
     players_team2 = data[data['Team ID'] == team2_id]
