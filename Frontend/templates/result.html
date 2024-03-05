@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Predicted Team</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Team ID</th>
+                <th>Role</th>
+                <!-- <th>next SR</th>
+                <th>next_wkts</th>
+                <th>next_runs_given</th> -->
+                <!-- Add other columns here -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, player in players.iterrows() %}
+                <tr>
+                    <td>{{ player['Player'] }}</td>
+                    <td>{{ player['Team ID'] }}</td>
+                    <td>{{ player['Role'] }}</td>
+                    <!-- <td>{{ player['next SR'] }}</td>
+                    <td>{{ player['next_wkts'] }}</td>
+                    <td>{{ player['next_runs_given'] }}</td> -->
+                    <!-- Add other columns here -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

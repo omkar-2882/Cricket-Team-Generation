@@ -1,0 +1,9 @@
+Player,Match,Team ID,Role,Runs Scored,Balls Played,Out,Bat SR,50,100,4s Scored,6s Scored,Bat Dot%,Overs Bowled,Runs Given,Wickets Taken,Econ,Bowl Avg,Bowl SR,5W,4s Given,6s Given,Bowl Dot%,next_runs,next_balls,next SR,next_overs,next_runs_given,next_wkts,next_runs_ll_95,next_runs_ul_95,next_balls_ll_95,next_balls_ul_95,next_overs_ll_95,next_overs_ul_95,next_runs_given_ll_95,next_runs_given_ul_95,next_wkts_ll_95,next_wkts_ul_95
+Noor Ahmad,t100m2022_01,GT,Bowler,9,4,0,225.0,0,0,0,1,25.0,2.3,31,0,12.4,0.0,0,0,2,1,13.3,4,5,80.0,1,18,3,3,5,4,6,0,1,16,20,3,3
+CV Varun,tnpl2022_29,KKR,Bowler,0,0,0,0.0,0,0,0,0,0.0,2.5,16,0,5.65,0.0,0,0,2,0,52.9,1,1,100.0,0,19,3,0,2,1,2,0,1,16,21,3,4
+Mohammed Shami,ipl2023_62,GT,Bowler,0,1,1,0.0,0,0,0,0,100.0,4.0,21,4,5.25,5.2,6,0,1,1,54.2,4,2,200.0,1,26,3,3,4,2,3,1,1,24,28,3,4
+MM Sharma,smat2022_128,GT,Bowler,0,0,0,0.0,0,0,0,0,0.0,4.0,23,1,5.75,23.0,24,0,2,1,62.5,1,1,100.0,0,14,2,1,2,1,2,0,1,11,18,2,2
+VG Arora,smat2022_136,KKR,Bowler,2,2,0,100.0,0,0,0,0,0.0,4.0,27,3,6.75,9.0,8,0,0,2,75.0,0,1,0.0,0,13,1,0,0,1,1,0,1,10,16,1,2
+SH Johnson,bbl2022_61,GT,Bowler,0,0,0,0.0,0,0,0,0,0.0,4.0,37,1,9.25,37.0,24,0,5,0,33.3,0,0,0.0,1,13,1,0,0,1,0,0,1,8,18,1,1
+C Sakariya,smat2022_133,KKR,Bowler,0,0,0,0.0,0,0,0,0,0.0,4.0,33,4,8.25,8.2,6,0,4,0,62.5,1,2,50.0,1,18,1,1,2,1,3,0,1,14,21,1,2
+MA Starc,ipl2023_03,KKR,Bowler,4,4,1,100.0,0,0,1,0,75.0,0.0,0,0,0.0,0.0,0,0,0,0,0.0,1,2,50.0,0,0,0,1,2,1,4,0,0,0,0,0,0
