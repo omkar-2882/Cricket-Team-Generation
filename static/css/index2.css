@@ -1,0 +1,71 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    perspective: 1000px; /* Adds depth to the 3D effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-wrapper{
+    /* width: 265px;
+    height: 270px; */
+    position: relative;
+    perspective: 1000px; /* Adds depth to the 3D effect */
+}
+
+.myCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    /* background-color: rgb(92, 66, 66); */
+    width: 300px;
+    height: 50vh;
+    transition: all .2s linear;
+    /* position: absolute; */
+    transform-style: preserve-3d; /* Ensures child elements are also transformed in 3D space */
+    transition: transform 0.5s; /* Adds a smooth transition effect */
+    cursor: pointer;
+}
+
+.myCard:hover{
+    transform: rotateY(180deg);
+    /* transform: scale(1.1); */
+    /* border: 2px solid red; */
+    /* width: 300px !important; */
+}
+
+.myCard img{
+    object-fit: cover;
+    width: 80%;
+}
+
+.teamBtn{
+    border: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+}
+
+.submitSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
