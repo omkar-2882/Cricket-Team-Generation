@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html {
@@ -8,7 +9,7 @@ html {
 }
 
 body {
-    background-image: url("../../assets/homepage-background.png");
+    background-image: url("../assets/homepage-background.png");
     background-position: center 20%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 486px;
     clip-path: polygon(0 0, 100% 0%, 100% 66%, 0% 100%);
 }
@@ -28,7 +29,7 @@ body {
     /* width: 30%; */
     color: red;
     font-size: 5rem;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 .main {
@@ -37,6 +38,11 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+}
+
+.main form{
+    width: 100%;
 }
 
 .container {
@@ -59,6 +65,8 @@ body {
     width: 265px;
     height: 270px;
     border-radius: 50px;
+    position: relative;
+    perspective: 1000px;
     /* padding: 0rem; */
 }
 
@@ -69,31 +77,59 @@ body {
 }
 
 .myCard {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    /* position: absolute;
+    top: 0; */
     border-radius: 50px;
-    border: 6px solid rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.4);
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
     transition: all .3s ease-in-out;
+    cursor: pointer;
     /* opacity: 0.5; */
 }
-
 
 .myCard img {
     object-fit: cover;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 50px;
-    /* width: 100%; */
+    border-radius: 45px;
+    width: 100%;
+    height: 100%;
+}
+
+.frontFace, .backFace{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.frontFace{
+    transform: rotateY(0deg);
+}
+
+.backFace{
+    transform: rotateY(180deg);
 }
 
 .teamBtn {
     border: none;
     background: none;
-    /* width: 265px;
-    height: 270px; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d; /* Ensures child elements are also transformed in 3D space */
+    transition: transform 0.5s; /* Adds a smooth transition effect */
+    cursor: pointer;
+    /* border-radius: 50px; */
 }
 
 .submitSection {
@@ -102,4 +138,27 @@ body {
     align-items: center;
     gap: 1rem;
     margin: 1rem 0;
+    padding: 2rem 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.457);
+    gap: 2rem;
+}
+
+.submitSection button {
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 10px;
+    background-color: rgba(57, 57, 57, 0.417);
+    color: rgb(255, 0, 0);
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: 10rem;
+    text-align: center;
+    transition: all .4s;
+}
+
+.submitSection button:hover {
+    background-color: red;
+    color: white;
+    border: 2px solid white;
 }

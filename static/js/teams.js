@@ -2,52 +2,62 @@ const teams = [
     {
         "teamName": "Mumbai Indians",
         "teamID": "MI",
-        "imgURL": "../assets/ipl-card/mi.png"
+        "imgURL": "../static/assets/ipl-card/mi.png",
+        "img2URL": "../static/assets/ipl-cardhover/mi-hardik.png",
     },
     {
         "teamName": "CSK",
         "teamID": "CSK",
-        "imgURL": "../assets/ipl-card/csk.png"
+        "imgURL": "../static/assets/ipl-card/csk.png",
+        "img2URL": "../static/assets/ipl-cardhover/csk-ms.png",
     },
     {
         "teamName": "DELHI",
         "teamID": "DC",
-        "imgURL": "../assets/ipl-card/dc.png"
+        "imgURL": "../static/assets/ipl-card/dc.png",
+        "img2URL": "../static/assets/ipl-cardhover/dc-david.png",
     },
     {
         "teamName": "KKR",
         "teamID": "KKR",
-        "imgURL": "../assets/ipl-card/kkr.png"
+        "imgURL": "../static/assets/ipl-card/kkr.png",
+        "img2URL": "../static/assets/ipl-cardhover/kkr-shreyash.png",
     },
     {
         "teamName": "LSG",
         "teamID": "LSG",
-        "imgURL": "../assets/ipl-card/lsg.png"
+        "imgURL": "../static/assets/ipl-card/lsg.png",
+        "img2URL": "../static/assets/ipl-cardhover/lsg-kl.png",
     },
     {
         "teamName": "PBKS",
         "teamID": "PBKS",
-        "imgURL": "../assets/ipl-card/pbks.png"
+        "imgURL": "../static/assets/ipl-card/pbks.png",
+        "img2URL": "../static/assets/ipl-cardhover/pbks-shikhar.png",
     },
     {
         "teamName": "RCB",
         "teamID": "RCB",
-        "imgURL": "../assets/ipl-card/rcb.png"
+        "imgURL": "../static/assets/ipl-card/rcb.png",
+        "img2URL": "../static/assets/ipl-cardhover/rcb-duplesi.png",
     },
     {
         "teamName": "SRH",
         "teamID": "SRH",
-        "imgURL": "../assets/ipl-card/srh.png"
+        "imgURL": "../static/assets/ipl-card/srh.png",
+        "img2URL": "../static/assets/ipl-cardhover/srh-patcummins.png",
     },
     {
         "teamName": "GT",
         "teamID": "GT",
-        "imgURL": "../assets/ipl-card/gt.png"
+        "imgURL": "../static/assets/ipl-card/gt.png",
+        "img2URL": "../static/assets/ipl-cardhover/gt-shubhamangill.png",
     },
     {
         "teamName": "RR",
         "teamID": "RR",
-        "imgURL": "../assets/ipl-card/rr.png"
+        "imgURL": "../static/assets/ipl-card/rr.png",
+        "img2URL": "../static/assets/ipl-cardhover/rr-samson.png",
     }
 ]
 
@@ -63,9 +73,14 @@ function buildTeamSection(teams) {
     const teamImgHtml = teams.map((team) => {
         return `
             <div class="card-wrapper">
-                <div class="myCard">
-                    <button type="button" id=${team.teamID} class="teamBtn" onClick="handleOnClick('${team.teamID}')"}>
-                        <img src=${team.imgURL} alt="">
+                <div class="myCard" id=${team.teamID}  >
+                    <button type="button" class="teamBtn" onClick="handleOnClick('${team.teamID}')">
+                        <div class="frontFace">
+                            <img src=${team.imgURL} alt="">
+                        </div>
+                        <div class="backFace">
+                            <img src=${team.img2URL} alt="">
+                        </div>
                     </button>
                 </div>
             </div>
@@ -84,11 +99,17 @@ const handleOnClick = (teamID) => {
         team1 = teamID;
         const team1Input = document.getElementById("selectedTeam1");
         team1Input.setAttribute('value', team1);
+        const team1Card = document.getElementById(teamID);
+        team1Card.style.border = "5px solid red";
+        team1Card.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
     }
-    else{
+    else if(team2.length == 0){
         team2 = teamID;
         const team2Input = document.getElementById("selectedTeam2");
         team2Input.setAttribute('value', team2);
+        const team2Card = document.getElementById(teamID);
+        team2Card.style.border = "5px solid red";
+        team2Card.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
     }
     console.log(team1);
     console.log(team2);
@@ -96,6 +117,18 @@ const handleOnClick = (teamID) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
+}
+
+const handleReset = () => {
+    const team1Card = document.getElementById(team1);
+    team1Card.style.border = "5px solid black";
+    team1Card.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+    team1 = "";
+
+    const team2Card = document.getElementById(team2);
+    team2Card.style.border = "5px solid black";
+    team2Card.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+    team2 = "";
 }
 
 
