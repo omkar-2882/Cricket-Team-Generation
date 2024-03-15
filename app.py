@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import pandas as pd
 
 app = Flask(__name__)
+
+teamIDs = {}
 
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
@@ -72,10 +74,30 @@ def home():
     if request.method == 'POST':
         team1_id = request.form['team1']
         team2_id = request.form['team2']
+        teamIDs["team1_id"] = team1_id
+        teamIDs["team2_id"] = team2_id
         # Select top players
-        selected_players = select_top_players(team1_id, team2_id)
-        return render_template('result.html', players=selected_players)
+        # selected_players = select_top_players(team1_id, team2_id)
+        # print(selected_players)
+        return render_template('result2.html')
     return render_template('index.html')
+
+@app.route('/get_players_data', methods=['GET'])
+def get_players_data():
+    try:
+        # Retrieve team IDs from the request
+        team1_id = teamIDs["team1_id"]
+        team2_id = teamIDs["team2_id"]
+        
+        # Call your function to select top players
+        selected_players = select_top_players(team1_id, team2_id)
+        
+        # Convert the DataFrame to JSON and return it
+        return jsonify(selected_players.to_dict(orient='records'))
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # selected_players = select_top_players("kkr", "csk")
+    
