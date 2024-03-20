@@ -39,16 +39,16 @@ def select_top_players(team1_id, team2_id):
     wicket_keepers = players_by_role.get('WK')
 
     # Sort batsmen by 'next_SR' column
-    batsmen_sorted = batsmen.sort_values(by='next SR', ascending=False)
+    batsmen_sorted = batsmen.sort_values(by='next_SR', ascending=False)
 
     # Sort bowlers first by 'next_wickets', then by 'next_runs_given' column
     bowlers_sorted = bowlers.sort_values(by=['next_wkts', 'next_runs_given'], ascending=[False, True])
 
     # Sort wicket keepers by 'next_SR' column
-    wicket_keepers_sorted = wicket_keepers.sort_values(by='next SR', ascending=False)
+    wicket_keepers_sorted = wicket_keepers.sort_values(by='next_SR', ascending=False)
 
     # Sort all-rounders first by 'next_SR', then by 'next_wickets' column
-    all_rounders_sorted = all_rounders.sort_values(by=['next SR', 'next_wkts'], ascending=[False, False])
+    all_rounders_sorted = all_rounders.sort_values(by=['next_SR', 'next_wkts'], ascending=[False, False])
 
     # Select top 3 batsmen
     selected_batsmen = batsmen_sorted.head(3)

@@ -15,31 +15,61 @@ function fetchPlayers() {
 
             // Iterate through the player data and create HTML elements
             data.forEach((player, index) => {
+                // console.log(player)
                 const playerDiv = document.createElement('div');
-                playerDiv.className = 'player';
+                playerDiv.className = 'player p-tooltip';
+
+                let roleText = player.Role;
+                let batSR = Math.round(player.next_SR);
+                let wkts = player.next_wkts;
+                let fours = player.fours_Scored;
+                let sixes = player.six_Scored;
+                let runs_given = player.next_runs_given;
+                const tooltipText = `
+                    <div id="" class="p-tooltiptext card">
+                        <div class="card-header">
+                            <h3 class="">${roleText}</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row row-cols-2">
+                                <div class="col">S/R: ${batSR}</div>
+                                <div class="col">Runs Given: ${runs_given}</div>
+                                <div class="col">Wickets: ${wkts}</div>
+                            </div>
+                        </div>
+                    </div>`
                 
+                playerDiv.innerHTML = tooltipText;
+
+                // if (player.Role == "Batsman")
+                //     popBtn.setAttribute("data-content", player.next_SR);
+                // else
+                //     popBtn.setAttribute("data-content", player.next_wkts);
+
                 const imgCont = document.createElement('div');
                 imgCont.className = 'imgCont';
 
                 const img = document.createElement('img');
-                // const link = "Players Link";
                 img.src = player.Players_Link;
-                img.alt = player.Player; 
+                img.alt = player.Player;
                 imgCont.appendChild(img);
+
                 playerDiv.appendChild(imgCont);
-                
+
                 const playerName = document.createElement('div');
                 playerName.className = 'playerName';
 
                 const p = document.createElement('p');
-                p.textContent = player.Player; 
+                p.textContent = player.Player;
                 playerName.appendChild(p);
                 playerDiv.appendChild(playerName);
 
-                if(index == 0){
+                // playerDiv.appendChild(popBtn);
+
+                if (index == 0) {
                     topDiv.appendChild(playerDiv);
                 }
-                else{
+                else {
                     bottomDiv.appendChild(playerDiv);
                 }
             });
