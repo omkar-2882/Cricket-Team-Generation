@@ -9,12 +9,12 @@ html {
 }
 
 .home-background {
-    /* background-image: url("../assets/homepage-background.png");
+    background-image: url("../assets/homepage-background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative; */
+    position: relative;
 }
 
 .header {
@@ -174,12 +174,12 @@ html {
 /* ---------------------------result css----------------------------- */
 
 .result-background {
-    /* background-image: url("../assets/resultpage-background.png");
+    background-image: url("../assets/resultpage-background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative; */
+    position: relative;
 }
 
 
