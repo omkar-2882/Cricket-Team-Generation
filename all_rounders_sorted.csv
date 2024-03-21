@@ -1,8 +1,0 @@
-Player,Match,Team ID,Role,Runs Scored,Balls Played,Out,Bat SR,50,100,4s Scored,6s Scored,Bat Dot%,Overs Bowled,Runs Given,Wickets Taken,Econ,Bowl Avg,Bowl SR,5W,4s Given,6s Given,Bowl Dot%,next_runs,next_balls,next SR,next_overs,next_runs_given,next_wkts,next_runs_ll_95,next_runs_ul_95,next_balls_ll_95,next_balls_ul_95,next_overs_ll_95,next_overs_ul_95,next_runs_given_ll_95,next_runs_given_ul_95,next_wkts_ll_95,next_wkts_ul_95
-AD Russell,t100m2022_21,KKR,AR,17,17,1,100.0,0,0,0,2,58.8,3.2,34,1,10.2,34.0,20,0,4,1,45.0,18,11,163.6363636,1,22,2,15,21,10,13,1,1,21,24,2,2
-SP Narine,t20blast2022_127,KKR,AR,0,1,1,0.0,0,0,0,0,100.0,4.0,26,1,6.5,26.0,24,0,2,0,25.0,12,8,150.0,1,27,4,10,14,7,9,1,1,26,28,4,4
-V Shankar,tnpl2021_26,GT,AR,47,40,1,117.5,0,0,3,1,25.0,2.0,22,1,11.0,22.0,12,0,1,2,41.7,21,15,140.0,0,14,2,17,25,12,17,0,0,11,16,1,2
-M Shahrukh Khan,tnpl2022_32,GT,AR,22,17,1,129.4,0,0,2,1,35.3,0.0,0,0,0.0,0.0,0,0,0,0,0.0,18,13,138.4615385,0,2,0,15,22,11,15,0,0,0,4,0,0
-R Tewatia,smat2022_128,GT,AR,2,3,1,66.7,0,0,0,0,33.3,2.0,20,0,10.0,0.0,0,0,2,0,8.3,11,8,137.5,1,15,2,8,14,6,10,0,1,13,18,2,2
-Rashid Khan,t20blast2022_123,GT,AR,25,12,0,208.3,0,0,1,2,25.0,4.0,24,2,6.0,12.0,12,0,1,1,33.3,4,3,133.3333333,1,25,4,3,5,2,4,1,1,24,26,4,4
-VR Iyer,smat2022_033,KKR,AR,57,35,1,162.9,1,0,5,2,17.1,2.0,23,1,11.5,23.0,12,0,3,1,25.0,4,8,50.0,1,7,1,1,12,3,12,1,1,4,10,1,1
