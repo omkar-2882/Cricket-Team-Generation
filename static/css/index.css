@@ -9,7 +9,7 @@ html {
 }
 
 .home-background {
-    background-image: url("../assets/homepage-background.png");
+    background-image: url("https://lh3.googleusercontent.com/drive-viewer/AKGpihaiFu-b2Jtz92NEBUHDQHi4YgvRiVLEJGG0LLLhtomFDIxmJWL7r1jN36ODxXPbmeJa3Vygob7wXZBfcm-hwk53PW8_=s1600");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -174,7 +174,7 @@ html {
 /* ---------------------------result css----------------------------- */
 
 .result-background {
-    background-image: url("../assets/resultpage-background.png");
+    background-image: url("https://lh3.googleusercontent.com/drive-viewer/AKGpihbpjev3F2K51V1b04NCvCuUi3FwAzWfy_JMUYZ7BaPcjEWU97qM0r5ZRmAHAF1SXBf9y6YjXQXr07UKZaqij3zIjljoYA=s1600");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

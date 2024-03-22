@@ -99,5 +99,4 @@ def get_players_data():
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
-    # selected_players = select_top_players("kkr", "csk")
     
