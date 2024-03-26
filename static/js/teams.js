@@ -100,7 +100,7 @@ const handleOnClick = (teamID) => {
         const team1Input = document.getElementById("selectedTeam1");
         team1Input.setAttribute('value', team1);
         const team1Card = document.getElementById(teamID);
-        team1Card.style.border = "5px solid red";
+        team1Card.style.border = "2px solid red";
         team1Card.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
     }
     else if(team2.length == 0){
@@ -108,7 +108,7 @@ const handleOnClick = (teamID) => {
         const team2Input = document.getElementById("selectedTeam2");
         team2Input.setAttribute('value', team2);
         const team2Card = document.getElementById(teamID);
-        team2Card.style.border = "5px solid red";
+        team2Card.style.border = "2px solid red";
         team2Card.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
     }
     console.log(team1);
@@ -121,12 +121,12 @@ const handleSubmit = (e) => {
 
 const handleReset = () => {
     const team1Card = document.getElementById(team1);
-    team1Card.style.border = "5px solid black";
+    team1Card.style.border = "none";
     team1Card.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
     team1 = "";
 
     const team2Card = document.getElementById(team2);
-    team2Card.style.border = "5px solid black";
+    team2Card.style.border = "none";
     team2Card.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
     team2 = "";
 }

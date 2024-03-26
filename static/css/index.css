@@ -8,6 +8,11 @@ html {
     font-size: 16px;
 }
 
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
 .home-background {
     background-image: url("https://lh3.googleusercontent.com/drive-viewer/AKGpihaiFu-b2Jtz92NEBUHDQHi4YgvRiVLEJGG0LLLhtomFDIxmJWL7r1jN36ODxXPbmeJa3Vygob7wXZBfcm-hwk53PW8_=s1600");
     background-position: center;
@@ -23,7 +28,7 @@ html {
     align-items: center;
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.8);
-    height: 486px;
+    height: 30%;
     clip-path: polygon(0 0, 100% 0%, 100% 66%, 0% 100%);
 }
 
@@ -36,11 +41,11 @@ html {
 
 .main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    width: 100%;
+    /* height: 70%; */
 }
 
 .main form {
@@ -59,14 +64,14 @@ html {
     justify-content: center;
     align-items: center;
     width: 90vw;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
 .card-wrapper {
-    width: 265px;
-    height: 270px;
-    border-radius: 50px;
+    width: 16.5rem;
+    height: 16.8rem;
+    border-radius: 3rem;
     position: relative;
     perspective: 1000px;
     /* padding: 0rem; */
@@ -76,6 +81,8 @@ html {
     /* transform:rotateX(180deg); */
     transform: rotateY(180deg);
     /* transform:rotateZ(180deg); */
+    /* box-shadow: none; */
+
 }
 
 .myCard {
@@ -84,23 +91,25 @@ html {
     align-items: center; */
     /* position: absolute;
     top: 0; */
-    border-radius: 50px;
-    border: 5px solid rgb(0, 0, 0);
+    border-radius: 3rem;
+    /* border: 2px solid rgb(255, 255, 255); */
     background-color: rgba(255, 255, 255, 0.4);
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: all .3s ease-in-out;
     cursor: pointer;
+    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, .7);
     /* opacity: 0.5; */
 }
 
 .myCard img {
     object-fit: cover;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 45px;
+    border-radius: 3rem;
     width: 100%;
     height: 100%;
+    filter:contrast(130%);
 }
 
 .frontFace,
@@ -142,7 +151,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     padding: 2rem 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.457);
@@ -169,6 +178,22 @@ html {
     color: rgb(255, 0, 0);
 
     border: 2px solid rgb(255, 0, 0);
+}
+
+@media (max-width: 1024px) {
+    html{
+        font-size: 10px;
+    }
+}
+@media (max-width: 768px) {
+    html{
+        font-size: 8px;
+    }
+}
+@media (max-width: 425px) {
+    html{
+        font-size: 5px;
+    }
 }
 
 /* ---------------------------result css----------------------------- */
@@ -264,7 +289,7 @@ html {
     position: relative;
     border-radius: 30px;
     padding: 1rem;
-    box-shadow: 8px 8px 9px -4px rgb(199 199 199 / 58%);      
+    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, .7);      
 }
 
 .p-tooltip .p-tooltiptext {
