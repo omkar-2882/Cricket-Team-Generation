@@ -22,7 +22,7 @@ ipl_mapping = {
         ],
         'Gujarat Lions': [
             'Suresh Raina', 'Paras Dogra', 'Eklavya Dwivedi', 'Aaron Finch', 
-            'Ishan Kishan', 'Dinesh Karthik', 'Brendon McCullum', 'Akshdeep Nath', 
+            'Ishan Kishan', 'Dinesh Karthik', 'Brendon McCullum', 'Akshdeep Nath',
             'Jaydev Shah', 'Umang Sharma', 'Dwayne Bravo', 'James Faulkner', 
             'Ravindra Jadeja', 'Dwayne Smith', 'Amit Mishra', 'Shadab Jakati', 
             'Shivil Kaushik', 'Dhawal Kulkarni', 'Praveen Kumar', 'Sarabjit Ladda', 
