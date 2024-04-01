@@ -4,14 +4,21 @@ import pandas as pd
 app = Flask(__name__)
 
 teamIDs = {}
+lineUp = {
+    "MI": ['RG Sharma', 'Ishan Kishan','Naman Dhir', 'NT Tilak Varma', 'HH Pandya', 'TH David', 'JJ Bumrah',  'PP Chawla', 'G Coetzee', 'R Shepherd','SZ Mulani'],
+    "RR": ['YBK Jaiswal', 'JC Buttler', 'SV Samson', 'R Parag', 'R Ashwin', 'DC Jurel', 'SO Hetmyer', 'TA Boult', 'Avesh Khan', 'YS Chahal', 'Sandeep Sharma', 'N Burger'],
+}
 
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
     data = pd.read_csv('Final Players data 2.csv')
     # Filter players for the specified team IDs
-    players_team1 = data[data['Team ID'] == team1_id]
-    players_team2 = data[data['Team ID'] == team2_id]
+    
+    # players_team1 = data[(data['Team ID'] == team1_id) & (data['Player'].isin(lineUp[team1_id]))]
+    # players_team2 = data[(data['Team ID'] == team2_id) & (data['Player'].isin(lineUp[team2_id]))]
+    players_team1 = data[(data['Team ID'] == team1_id)]
+    players_team2 = data[(data['Team ID'] == team2_id)]
     return players_team1, players_team2
 
 # Function to select top players
@@ -98,5 +105,7 @@ def get_players_data():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
+    # selected_players = select_top_players("MI", "RR")
+    # print(selected_players)
     app.run(debug=True)
     
