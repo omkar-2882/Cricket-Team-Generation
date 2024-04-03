@@ -9,13 +9,13 @@ const teams = [
         "teamName": "CSK",
         "teamID": "CSK",
         "imgURL": "../static/assets/ipl-card/csk.png",
-        "img2URL": "../static/assets/ipl-cardhover/csk-ms.png",
+        "img2URL": "../static/assets/ipl-cardhover/csk-ruturaj.png",
     },
     {
         "teamName": "DELHI",
         "teamID": "DC",
         "imgURL": "../static/assets/ipl-card/dc.png",
-        "img2URL": "../static/assets/ipl-cardhover/dc-david.png",
+        "img2URL": "../static/assets/ipl-cardhover/dc-rishabh.png",
     },
     {
         "teamName": "KKR",
