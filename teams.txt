@@ -1,0 +1,78 @@
+******RCB********
+V Kohli
+F du Plessis
+C Green
+G Maxwell
+R Patidar
+A Rawat     
+D Karthik
+A Joseph
+M Dagar
+M Siraj
+Y Dayal
+impact player vyshak vijaykumar
+**************LSG*******************
+Q de Kock
+L Rahul
+D Padikkal
+M Stoinis
+N Pooran
+A Badoni
+K Pandya
+R Bishnoi
+M Khan
+M Yadav
+M Siddharth
+(IMP) naveen - ul
+*************DC*************
+P Shaw
+D Warner
+R Pant
+M Marsh
+T Stubbs
+A Patel
+A Porel
+A Nortje
+M Kumar
+I Sharma
+K Ahmed
+(IMP) R Salam
+**************KKR*************
+P Salt
+S Narine
+V Iyer
+S Iyer
+R Singh
+A Russell
+A Singh
+A Sudhakar
+M Starc
+H Rana
+V Chakravarti
+(IMP) A Raghuvanshi
+*************GT*************
+W Saha
+S Gill
+D Miller
+V Shankar
+A Omarzai
+R Tewatia
+Rashid-Khan
+U Yadav
+N Ahmad
+D Nalkande
+M Sharma
+(IMP) S Sudharsan
+**************PBKS************
+S Dhawan
+J Bairstow
+J Sharma
+L Livingstone
+S Curran
+S Singh
+H Brar
+H Patel
+K Rabada
+R Chahar
+A Singh
+(IMP) P Singh
