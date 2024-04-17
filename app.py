@@ -4,40 +4,15 @@ import pandas as pd
 app = Flask(__name__)
 
 teamIDs = {}
-lineUp = {
-    "MI": 
-        ['RG Sharma', 'Ishan Kishan','Naman Dhir', 'NT Tilak Varma', 'HH Pandya', 'TH David', 'JJ Bumrah',  'PP Chawla', 'G Coetzee', 'R Shepherd','SZ Mulani'],
-    "RR": 
-        ['YBK Jaiswal', 'JC Buttler', 'SV Samson', 'R Parag', 'R Ashwin', 'DC Jurel', 'SO Hetmyer', 'TA Boult', 'Avesh Khan', 'YS Chahal', 'Sandeep Sharma', 'N Burger'],
-    "RCB":
-        ['V Kohli', 'F du Plessis', 'Cameron Green', 'GJ Maxwell', 'RM Patidar', 'Anuj Rawat', 'KD Karthik', 'RJW Topley', 'MJ Dagar', 'Mohammed Siraj', 'Yash Dayal'],
-    "LSG": 
-        ['Q de Kock','KL Rahul', 'D Padikkal', 'MP Stoinis','N Pooran','A Badoni', 'KH Pandya', 'Ravi Bishnoi', 'MP Yadav', 'Yash Thakur', 'Naveen-ul-Haq'],
-    "DC": 
-        ['PP Shaw', 'DA Warner', 'RR Pant', 'MR Marsh', 'T Stubbs', 'AR Patel', 'A Nortje', 'Sumit Kumar', 'I Sharma', 'KK Ahmed', 'Rasikh Salam'],
-    "KKR":
-        ['PD Salt', 'SP Narine', 'VR Iyer', 'SS Iyer', 'Ramandeep Singh' 'RK Singh', 'AD Russell', 'MA Starc', 'Harshit Rana', 'CV Varun', 'A Raghuvanshi'],
-    "GT":
-        ['WP Saha', 'Shubman Gill', 'DA Miller', 'V Shankar', 'Azmatullah Omarzai', 'R Tewatia', 'Rashid Khan', 'UT Yadav', 'Noor Ahmad', 'DG Nalkande', 'MM Sharma', 'B Sai Sudharsan'],
-    "PBKS":
-        ['S Dhawan', 'JM Bairstow', 'JM Sharma', 'LS Livingstone', 'SM Curran', 'Shashank Singh', 'Harpreet Brar', 'HV Patel',  'K Rabada', 'RD Chahar', 'Arshdeep Singh',  'NT Ellis', 'Prabhsimran Singh'],
-    "SRH": 
-        ["TM Head", "MA Agarwal", "RA Tripathi", "GD Phillips", "Abhishek Sharma", "Abdul Samad", "PJ Cummins", "B Kumar", "T Natarajan", "M Markande", "Fazalhaq Farooqi", "JD Unadkat", "Akash Singh", "J Subramanyan", "AK Markram", "M Jansen", "PW Hasaranga", "Washington Sundar", "Shahbaz Ahmed", "K Nitish Kumar Reddy", "Sanvir Singh", "H Klaasen", "Anmolpreet Singh", "UD Yadav"],
-    "CSK":
-         ['RD Gaikwad', 'DJ Mitchell', 'S Dube', 'AM Rahane', 'SN Thakur', 'Mustafizur Rahman', 'DL Chahar', 'M Pathirana', 'M Theekshana', 'TU Deshpande', 'RA Jadeja', 'R Ravindra', 'MM Ali', 'MJ Santner', 'MS Dhoni', 'DP Conway', 'Sameer Rizvi', 'SK Rasheed', 'Mukesh Choudhary', 'RS Hangargekar','Simarjeet Singh', 'PH Solanki', 'N Sindhu', 'AJ Mandal']
-}
 
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
     data = pd.read_csv('Final Players data 2.csv')
     # Filter players for the specified team IDs
-    
-    players_team1 = data[(data['Team ID'] == team1_id) & (data['Player'].isin(lineUp[team1_id]))]
-    players_team2 = data[(data['Team ID'] == team2_id) & (data['Player'].isin(lineUp[team2_id]))]
-    # players_team1 = data[(data['Team ID'] == team1_id)]
-    # players_team2 = data[(data['Team ID'] == team2_id)]
-    return players_team1, players_team2 
+    players_team1 = data[data['Team ID'] == team1_id]
+    players_team2 = data[data['Team ID'] == team2_id]
+    return players_team1, players_team2
 
 # Function to select top players
 def select_top_players(team1_id, team2_id):
@@ -86,11 +61,6 @@ def select_top_players(team1_id, team2_id):
 
     # Select top 2 wicket keepers
     selected_wicket_keepers = wicket_keepers_sorted.head(2)
-    
-    print(batsmen_sorted)
-    print(bowlers_sorted)
-    print(all_rounders_sorted)
-    print(wicket_keepers_sorted)
 
     # Concatenate all selected players into one dataframe
     selected_players = pd.concat([selected_batsmen, selected_bowlers, selected_all_rounders, selected_wicket_keepers])
@@ -127,8 +97,19 @@ def get_players_data():
     except Exception as e:
         return jsonify({'error': str(e)})
 
+@app.route('/points')
+def points():
+    return render_template('points.html')
+    # return render_template('index.html')
+
+
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+    # return render_template('index.html')
+
+
+
 if __name__ == '__main__':
-    selected_players = select_top_players("DC", "KKR")
-    print(selected_players)
-    # app.run(debug=True)
+    app.run(debug=True)
     

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Point System: Dream11 Fantasy Cricket Points Calculator | Dream11</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="stylesheet" href="../static/css/points.css">
+    <script src="../static/js/points.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/points.css') }}">
+    <script src="{{ url_for('static', filename='js/points.js') }}"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg nav-color rounded-4" data-bs-theme="dark">
+        <div class="container-fluid">
+            <!-- <img class="logo-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlSM7eohdHkLNpw31Jf3XYkJCiTioU37SZFw&usqp=CAU" alt="logo image"> -->
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <!-- URL for app.py -->
+                <a class="nav-link active" aria-current="page" href="/">Home</a> 
+                <a class="nav-link active" href="{{ url_for('points') }}">Points System</a> 
+                <a class="nav-link active" href="{{ url_for('pricing') }}">Pricing</a>
+
+                <!-- URL for Local -->
+              <!-- <a class="nav-link active" aria-current="page" href="./index.html">Home</a> -->
+              <!-- <a class="nav-link active" href="./points.html">Points System</a> -->
+              <!-- <a class="nav-link active" href="pricing.html">Pricing</a> -->
+              <!-- <a class="nav-link active" href="#">About Us</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    <section class="about_section">
+        <div class="container">
+            <h3 class="universal_heading universal_heading_sub">Here’s how your <span>Fantasy Points System</span> for
+                Cricket works. </h3>
+            <p>If you are just a beginner fantasy cricket player, your first step is to understand fantasy cricket
+                basics. As you learn how to play fantasy cricket, you'll need to know how the Fantasy Points System for
+                Cricket works for different Cricket games. Knowing the Dream11 point system for TATA IPL Fantasy Point
+                System will help you maximize your chances of winning better.</p>
+            <p>Knowing the fantasy points system is crucial, and it helps you select the right players in your team. So,
+                check out the detailed Dream11 fantasy points system for fantasy cricket below.</p>
+        </div>
+    </section>
+
+
+
+    <section class="tab_box">
+
+        <!-- Tab links -->
+        <div class="tab">
+            <div class="container"></div>
+            <div class="mobile_scroll_outer" style="display: inline-block;">
+                <div class="mobile_scroll">
+                    <button class="tablinks active" onclick="openCity(event, 'ipl'); ">IPL</button>
+                    <!-- <button class="tablinks" onclick="openCity(event, 't20'); resetTopPositionT20();">T20</button>
+						<button class="tablinks" onclick="openCity(event, 'od'); resetTopPositionOD(); ">OD</button>
+						<button class="tablinks" onclick="openCity(event, 'test'); resetTopPositionTest();">Test</button>
+						<button class="tablinks" onclick="openCity(event, 't10'); resetTopPositionT10();">T10</button>
+						<button class="tablinks" onclick="openCity(event, 'the_hundred'); resetTopPositionTheHundred();">The Hundred</button>
+						<button class="tablinks" onclick="openCity(event, 'other_t20'); resetTopPositionOtherT20();">Other T20</button>
+						<button class="tablinks" onclick="openCity(event, 'other_od'); resetTopPositionOtherOD();">Other OD</button>
+						<button class="tablinks" onclick="openCity(event, 'other_test'); resetTopPositionOtherTest();">Other Test</button> -->
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <div id="ipl" class="tabcontent" style="display: block;">
+                <div class="nav-box">
+                    <nav>
+                        <ul>
+                            <li><a class="inner_anchor" href="#ipl_batting">Batting</a></li>
+                            <li><a class="inner_anchor" href="#ipl_bowling">Bowling</a></li>
+                            <li><a class="inner_anchor" href="#ipl_fielding">Fielding</a></li>
+                            <li><a class="inner_anchor" href="#ipl_other">Other</a></li>
+                            <li><a class="inner_anchor" href="#ipl_economy_rate">Economy rate</a></li>
+                            <li><a class="inner_anchor" href="#ipl_strike_rate">Strike rate</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="cotainer-section">
+                    <main>
+                        <div class="point_table_box" id="ipl_batting" style="padding-top: 158px; margin-top: -158px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_batting_banner.png);">
+                                    <h3>Batting Points</h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Run</h5>
+                                        </div>
+                                        <div class="green pointbox">+1</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Boundary Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+1</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Six Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+2</div>
+                                    </li>
+                                
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Half-Century Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+8</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Century Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+16</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Dismissal for a duck
+                                                <p>(Batter, Wicket-Keeper, &amp; All-Rounder)</p>
+                                            </h5>
+
+                                        </div>
+                                        <div class="orange pointbox">-2</div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+
+                        <div class="point_table_box" id="ipl_bowling" style="padding-top: 158px; margin-top: -68px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_bowling_banner.png);">
+                                    <h3>Bowling Points</h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Wicket (Excluding Run Out)</h5>
+                                        </div>
+                                        <div class="green pointbox">+25</div>
+                                    </li>
+
+
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">4 Wicket Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+8</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">5 Wicket Bonus</h5>
+                                        </div>
+                                        <div class="green pointbox">+16</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Maiden Over</h5>
+                                        </div>
+                                        <div class="green pointbox">+8</div>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="point_table_box" id="ipl_fielding" style="padding-top: 158px; margin-top: -68px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_fieldingpoint_banner.png);">
+                                    <h3>Fielding Points</h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Catch</h5>
+                                        </div>
+                                        <div class="green pointbox">+8</div>
+                                    </li>
+                            
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Stumping/ Run Out (direct)</h5>
+                                        </div>
+                                        <div class="green pointbox">+12</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Run Out (Thrower/Catcher)</h5>
+                                        </div>
+                                        <div class="green pointbox">+6/6</div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="point_table_box" id="ipl_other" style="padding-top: 158px; margin-top: -68px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_otherpoint_banner.png);">
+                                    <h3>Other Points</h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                            
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">In announced lineups</h5>
+                                        </div>
+                                        <div class="green pointbox">+4</div>
+                                    </li>
+
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="point_table_box" id="ipl_economy_rate"
+                            style="padding-top: 158px; margin-top: -68px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_economyrate_banner.png);">
+                                    <h3>Economy Rate Points <span>(Min 2 Overs To Be Bowled)</span></h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Between 6 and 5 runs per over</h5>
+                                        </div>
+                                        <div class="green pointbox">+2</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Between 4.99 and 4 runs per over</h5>
+                                        </div>
+                                        <div class="green pointbox">+4</div>
+                                    </li>
+
+
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="point_table_box" id="ipl_strike_rate"
+                            style="padding-top: 158px; margin-top: -68px;">
+                            <div class="point_table_box_inner">
+                                <div class="point_table_header"
+                                    style="background-image: url(https://d13ir53smqqeyp.cloudfront.net/d11-static-pages/images/fps_strikerate_banner.png);">
+                                    <h3>Strike Rate <span>(Except Bowler)</span> Points <span>(Min 10 Balls To Be
+                                            Played)</span></h3>
+                                    <p
+                                        style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: #797979;padding-bottom: 24px;">
+                                        TATA IPL Fantasy Cricket Points System</p>
+
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Between 60 and 70 runs per 100 balls</h5>
+                                        </div>
+                                        <div class="orange pointbox">-2</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Between 50 and 59.99 runs per 100 balls</h5>
+                                        </div>
+                                        <div class="orange pointbox">-4</div>
+                                    </li>
+                                    <li>
+                                        <div style="width: 100%;">
+                                            <h5 class="pointtext">Below 50 runs per 100 balls</h5>
+                                        </div>
+                                        <div class="orange pointbox">-6</div>
+                                    </li>
+
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </main>
+                </div>
+                <section class="other_imp_section">
+                    <div class="container">
+                        <h3 class="universal_heading universal_heading_sub" style="margin-bottom: 4px;">Other
+                            <span>Important Points</span></h3>
+                        <p style="text-align: center; margin: 0px; font-size:14px; color: #4D4D4D;">Rules about
+                            substitutes</p>
+                        <ul>
+                            <li>All the X-Factor substitutes will get 4 points for being announced and score points for
+                                any contributions they make as per our Fantasy Point System.</li>
+                            <li>Concussion & COVID-19 Substitutes, if permitted as per the applicable rules and
+                                regulations of the tournament, will be awarded 4 points for making an appearance (only
+                                for T20s, ODs, Tests, T10s and The Hundred) and will be awarded points for all the
+                                contributions they make as per the Fantasy Point System.</li>
+                            <li>Substitutes other than Concussion substitutes, COVID-19, or X-Factor substitutes will
+                                not be awarded points for any contribution they make.</li>
+                            <li>If a player gets replaced by an X-Factor substitute in the Big Bash League but later
+                                comes back on the field, he will get points for his contributions. However, if a player,
+                                who was not a part of the announced lineups, comes to the field as a substitute, he will
+                                not get points for any of his contributions (except Concussion and COVID-19
+                                substitutes).</li>
+                            <li>A player who has been transferred from one team to the other might still be available
+                                for selection for his older team until the next scheduled team update on Dream11.
+                                However, no points will be attributed to the player in such a situation.</li>
+                            <li>If a player is announced in the starting eleven of a team but later is unable to start
+                                the match, they will not score any points. However, the player who plays as the
+                                replacement will earn points for the match (including starting points).</li>
+                            <li>No points will be awarded for any actions during a Super Over or a Super Five.</li>
+                            <li>No further adjustments will be made to the points awarded once a match has been marked
+                                as completed and winners have been declared. Points awarded for a LIVE game will be
+                                subject to change only when the match status is “In Progress” or “In Review”.</li>
+                            <li>More than 11 players from either team can play in Other OD/Other T20/Other Test matches.
+                            </li>
+                            <li>There are no negative points for low Strike Rates in Test matches.</li>
+                            <li>No points will be awarded for Strike, economy, or Maidens in ‘The Hundred’.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- *********** JAVASCRIPT********** -->
+            <!-- <script type="text/javascript">
+                function showDiv() {
+                    document.getElementById('download_started_box').style.display = "block";
+                }
+
+                function hideDiv() {
+                    document.getElementById('download_started_box').style.display = "none";
+                }
+
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+
+            </script> -->
+
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+</html>
