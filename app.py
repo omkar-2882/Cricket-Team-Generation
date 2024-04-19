@@ -4,11 +4,39 @@ import pandas as pd
 app = Flask(__name__)
 
 teamIDs = {}
+lineUp = {
+    "MI": 
+        ['RG Sharma', 'Ishan Kishan', 'NT Tilak Varma', 'HH Pandya', 'TH David', 'JJ Bumrah','Mohammad Nabi', 'R Shepherd', 'G Coetzee','A Madhwal', 'S Gopal'],
+    "RR": 
+        ['YBK Jaiswal', 'JC Buttler', 'SV Samson', 'R Parag', 'R Ashwin', 'DC Jurel', 'SO Hetmyer', 'TA Boult', 'Avesh Khan', 'YS Chahal', 'Sandeep Sharma', 'N Burger'],
+    "RCB":
+        ['V Kohli', 'F du Plessis', 'GJ Maxwell', 'RM Patidar','WG Jacks', 'Mahipal Lomaror', 'KD Karthik', 'RJW Topley', 'Mohammed Siraj', 'V Vyshak'],
+    "LSG": 
+        ['Q de Kock','KL Rahul', 'D Padikkal', 'MP Stoinis','N Pooran','A Badoni', 'KH Pandya', 'Ravi Bishnoi', 'MP Yadav', 'Yash Thakur', 'Naveen-ul-Haq'],
+    "DC": 
+        ['PP Shaw', 'DA Warner', 'RR Pant', 'MR Marsh', 'T Stubbs', 'AR Patel', 'A Nortje', 'Sumit Kumar', 'I Sharma', 'KK Ahmed', 'Rasikh Salam'],
+    "KKR":
+        ['PD Salt', 'SP Narine', 'VR Iyer', 'SS Iyer', 'Ramandeep Singh' 'RK Singh', 'AD Russell', 'MA Starc', 'CV Varun', 'VG Arora', 'A Raghuvanshi'],
+    "GT":
+        ['WP Saha', 'Shubman Gill', 'KS Williamson', 'V Shankar', 'Azmatullah Omarzai', 'R Tewatia', 'Rashid Khan', 'UT Yadav', 'Noor Ahmad', 'DG Nalkande', 'B Sai Sudharsan'],
+    "PBKS":
+        ['S Dhawan', 'JM Bairstow', 'JM Sharma', 'SM Curran', 'Sikandar Raza', 'Shashank Singh', 'AR Sharma', 'Harpreet Brar', 'HV Patel', 'K Rabada', 'Arshdeep Singh'],
+    "SRH": 
+        ["TM Head", "Abhishek Sharma", "Abdul Samad", "PJ Cummins", "B Kumar", "T Natarajan", "JD Unadkat", "AK Markram", "Shahbaz Ahmed", "K Nitish Kumar Reddy","H Klaasen"],
+    "CSK":
+         ['RD Gaikwad', 'DJ Mitchell', 'Sameer Rizvi', 'AM Rahane', 'M Theekshana', 'TU Deshpande', 'RA Jadeja', 'R Ravindra','SN Thakur', 'Mustafizur Rahman', 'MS Dhoni']
+}
 
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
-    data = pd.read_csv('Final Players data 2.csv')
+    data = pd.read_csv('Final Players data2.csv')
+    # url = "https://drive.google.com/file/d/1KvUGQKg-2SrJOcErqgMKXyWIgTdhyLcR/view?usp=sharing"
+    # url = "https://docs.google.com/spreadsheets/d/15hrVF9eqW0EvRQp83PmuIuv1PhfBtvkmGpGlWWDb6u8/edit?usp=sharing"
+    # file_id = url.split('/')[-2]
+    # url = f'https://drive.google.com/uc?export=download&id={file_id}'
+    # url = f'https://drive.google.com/uc?export=download&id=15hrVF9eqW0EvRQp83PmuIuv1PhfBtvkmGpGlWWDb6u8'
+    # data = pd.read_csv(url)
     # Filter players for the specified team IDs
     players_team1 = data[data['Team ID'] == team1_id]
     players_team2 = data[data['Team ID'] == team2_id]
@@ -66,8 +94,27 @@ def select_top_players(team1_id, team2_id):
     selected_players = pd.concat([selected_batsmen, selected_bowlers, selected_all_rounders, selected_wicket_keepers])
 
     # print(selected_players)
-
+    
+    captainSelection(selected_players)
     return selected_players
+
+def captainSelection(selected_players):
+    data = selected_players
+
+    # Define weights for different performance indicators (adjust these weights based on your requirements)
+    weight_sr = 0.4  # Weight for strike rate
+    weight_wickets = 0.5  # Weight for wickets taken
+    # weight_runs = 0.3  # Weight for runs scored
+    weight_runs_given = 0.2 #Weight for runs given by bowler
+
+    # Calculate performance score for each player
+    data['Performance'] = (data['next_SR'] * weight_sr) + (data['next_wkts'] * weight_wickets) + (data['next_runs_given'] * weight_runs_given)
+
+    # Sort players by performance score in descending order
+    players_sorted_by_performance = data.sort_values(by='Performance', ascending=False)
+
+    # Display the players sorted by performance score
+    print(players_sorted_by_performance[['Player','Performance']])
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -111,5 +158,7 @@ def pricing():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    selected_players = select_top_players("DC", "KKR")
+    print(selected_players)
+    # app.run(debug=True)
     
