@@ -158,7 +158,7 @@ def pricing():
 
 
 if __name__ == '__main__':
-    selected_players = select_top_players("DC", "KKR")
+    selected_players = select_top_players("RCB", "MI")
     print(selected_players)
     # app.run(debug=True)
     
