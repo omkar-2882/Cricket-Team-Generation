@@ -38,12 +38,9 @@ def fetch_player_data(team1_id, team2_id):
     # url = f'https://drive.google.com/uc?export=download&id=15hrVF9eqW0EvRQp83PmuIuv1PhfBtvkmGpGlWWDb6u8'
     # data = pd.read_csv(url)
     # Filter players for the specified team IDs
-    
-    players_team1 = data[(data['Team ID'] == team1_id) & (data['Player'].isin(lineUp[team1_id]))]
-    players_team2 = data[(data['Team ID'] == team2_id) & (data['Player'].isin(lineUp[team2_id]))]
-    # players_team1 = data[(data['Team ID'] == team1_id)]
-    # players_team2 = data[(data['Team ID'] == team2_id)]
-    return players_team1, players_team2 
+    players_team1 = data[data['Team ID'] == team1_id]
+    players_team2 = data[data['Team ID'] == team2_id]
+    return players_team1, players_team2
 
 # Function to select top players
 def select_top_players(team1_id, team2_id):
@@ -92,11 +89,6 @@ def select_top_players(team1_id, team2_id):
 
     # Select top 2 wicket keepers
     selected_wicket_keepers = wicket_keepers_sorted.head(2)
-    
-    print(batsmen_sorted)
-    print(bowlers_sorted)
-    print(all_rounders_sorted)
-    print(wicket_keepers_sorted)
 
     # Concatenate all selected players into one dataframe
     selected_players = pd.concat([selected_batsmen, selected_bowlers, selected_all_rounders, selected_wicket_keepers])
@@ -151,6 +143,19 @@ def get_players_data():
         return jsonify(selected_players.to_dict(orient='records'))
     except Exception as e:
         return jsonify({'error': str(e)})
+
+@app.route('/points')
+def points():
+    return render_template('points.html')
+    # return render_template('index.html')
+
+
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+    # return render_template('index.html')
+
+
 
 if __name__ == '__main__':
     selected_players = select_top_players("RCB", "MI")
