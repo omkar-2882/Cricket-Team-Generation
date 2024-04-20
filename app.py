@@ -30,7 +30,7 @@ lineUp = {
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
-    data = pd.read_csv('Final Players data2.csv')
+    data = pd.read_csv('C:\\Users\HP\Desktop\\final_year_project\\Cricket-Team-Generation\\Final Players Data2.csv')
     # url = "https://drive.google.com/file/d/1KvUGQKg-2SrJOcErqgMKXyWIgTdhyLcR/view?usp=sharing"
     # url = "https://docs.google.com/spreadsheets/d/15hrVF9eqW0EvRQp83PmuIuv1PhfBtvkmGpGlWWDb6u8/edit?usp=sharing"
     # file_id = url.split('/')[-2]
@@ -114,7 +114,7 @@ def captainSelection(selected_players):
     players_sorted_by_performance = data.sort_values(by='Performance', ascending=False)
 
     # Display the players sorted by performance score
-    print(players_sorted_by_performance[['Player','Performance']])
+    # print(players_sorted_by_performance[['Player','Performance']])
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -147,18 +147,16 @@ def get_players_data():
 @app.route('/points')
 def points():
     return render_template('points.html')
-    # return render_template('index.html')
 
 
 @app.route('/pricing')
 def pricing():
     return render_template('pricing.html')
-    # return render_template('index.html')
 
 
 
 if __name__ == '__main__':
     selected_players = select_top_players("RCB", "MI")
-    print(selected_players)
-    # app.run(debug=True)
+    # print(selected_players)
+    app.run(debug=True)
     
