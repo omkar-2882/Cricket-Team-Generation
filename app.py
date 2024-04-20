@@ -30,7 +30,7 @@ lineUp = {
 # Function to fetch player data
 def fetch_player_data(team1_id, team2_id):
     # Read the CSV file into a DataFrame
-    data = pd.read_csv('C:\\Users\HP\Desktop\\final_year_project\\Cricket-Team-Generation\\Final Players Data2.csv')
+    data = pd.read_csv('Final Players data2.csv')
     # url = "https://drive.google.com/file/d/1KvUGQKg-2SrJOcErqgMKXyWIgTdhyLcR/view?usp=sharing"
     # url = "https://docs.google.com/spreadsheets/d/15hrVF9eqW0EvRQp83PmuIuv1PhfBtvkmGpGlWWDb6u8/edit?usp=sharing"
     # file_id = url.split('/')[-2]
